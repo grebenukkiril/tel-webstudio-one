@@ -1,0 +1,39 @@
+@import "../utils/mixin";
+@import "../utils/each";
+.clients {
+    margin: 0 0 60px 0;
+    &__box {
+        @include displayFlex ($gap: 30px, $alignItems: center, $justifiContent: center, $flexDirection: column );
+    }
+    .clients-list {
+        @include displayFlex ($gap: 30px, $alignItems: center, $justifiContent: center, $flexDirection: row );
+        flex-wrap: wrap;
+        &__item {
+            @include displayFlex ($gap: 0, $alignItems: center, $justifiContent: center, $flexDirection: row );
+            overflow: hidden;
+            border-radius: 4px;
+            border: 1px solid;
+            border-color: #AFB1B8;
+            fill: #AFB1B8;
+            transition: all 200ms;
+            &:hover{
+                fill: #2196F3;
+                border-color: #2196F3;
+            }
+        }
+        &__link {
+            @include displayFlex ($gap: 0, $alignItems: center, $justifiContent: center, $flexDirection: row );
+            padding: 16px 51px;
+            fill: inherit;
+        }
+    }
+}
+@media (min-width:1200px){
+    .clients{
+        .clients-list{
+            &__link{
+                padding: 16px 31px;
+            }
+        }
+    }
+}

@@ -1,0 +1,106 @@
+@import "../utils/mixin";
+@import "../utils/each";
+.header {
+    &__inner {
+        @include displayFlex ($gap: 96px, $alignItems: center, $justifiContent: space-between, $flexDirection: row);
+    }
+    .menu {
+        @include displayFlex ($gap: 88px, $alignItems: center, $justifiContent: flex-start, $flexDirection: row);
+        padding: 26px 0;
+        &__list {
+            @include displayFlex ($gap: 51px, $alignItems: center, $justifiContent: center, $flexDirection: row);
+            display: none;
+        }
+        &__item {
+            @include displayFlex ($gap: 0px, $alignItems: center, $justifiContent: center, $flexDirection: row );
+            padding: 32px 0;
+            overflow: hidden;
+            position: relative;
+            transition:all 200ms;
+            &::after{
+                content:"";
+                position: absolute;
+                width: 100%;
+                height: 4px;
+                border-radius: 2px;
+                background-color: #2196F3;
+                left: 0;
+                bottom: -100%;
+                transition: bottom 400ms;
+            }
+            &:hover{
+                color: #2196F3;
+                &::after{
+                    bottom: 0;
+                }
+            }
+            &--main{
+                color: #2196F3;
+                &::after{
+                    bottom: 0;
+                }
+            }  
+        }
+        &__link {
+            color: #212121;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.28px;
+        }
+    }
+    .contact {
+        @include displayFlex ($gap: 10px, $alignItems: flex-start, $justifiContent: center, $flexDirection: column);
+        display: none;
+        &__link {
+            @include displayFlex ($gap: 8px, $alignItems: center, $justifiContent: flex-start, $flexDirection: row);
+            color: #757575;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.24px;
+        }
+    }
+}
+@media (min-width: 600px){
+    .container{
+        width: 600px;
+    }
+}
+@media (min-width:768px){
+    .container{
+        width: 768px;
+    }
+    .header{
+        .menu__list{
+        display: flex;
+        }
+        .menu{
+            align-items: center;
+            padding: 0;
+        }
+        .contact{
+            display: flex;
+        }
+    }
+    
+}
+@media (min-width:1200px){
+    .container{
+        width: 1200px;
+    }
+    .header{
+        .header__inner{
+            gap: 93px;
+            .menu__list{
+                gap: 53px;
+            }
+        }
+        .contact{
+            gap: 30px;
+            flex-direction: row;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@import "../utils/mixin";
+@each $titleSection in service, team, clients{
+    .#{$titleSection}__title{
+        color: #212121;
+        text-align: center;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.84px;
+    }
+}
+
+// @each $displaySection in service, team, clients{
+//     .#{$displaySection}__box{
+//         @include displayFlex ($gap: 0, $alignItems: center, $justifiContent: space-between, $flexDirection: column);
+//     }
+// }
+
+// @each $contentBox in service, team{
+//     .#{$contentBox}__content-box{
+//         @include displayFlex ($gap: 30px, $alignItems: center, $flexDirection: row);
+//         margin-bottom:188px ;
+//     }    
+// }
+
+@each $footerTitle in social-links, form{
+    .#{$footerTitle}__title{
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.42px;
+        text-transform: uppercase;
+    }
+}
+
+@each $modalLaber in name, phone, email, comment, checkbox{
+    .user-#{$modalLaber}{
+        width: 100%;
+        color: rgb(117, 117, 117);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        text-align: left;
+    }
+}

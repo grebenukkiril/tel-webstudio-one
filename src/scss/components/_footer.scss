@@ -1,0 +1,145 @@
+@import "../utils/mixin";
+@import "../utils/each";
+.footer {
+    padding: 60px 0;
+    background-color: #2F303A;
+    &__inner { 
+        @include displayFlex ($gap: 60px, $alignItems: center, $justifiContent: center, $flexDirection: row );
+        flex-wrap: wrap;
+    }
+    &__first-box {
+        @include displayFlex ($gap: 60px, $alignItems: center, $justifiContent: center, $flexDirection: row );
+        flex-wrap: wrap;
+    }
+    &__info-box {
+        @include displayFlex ($gap: 20px, $alignItems: center, $justifiContent: center, $flexDirection: column );
+        .contact {
+            @include displayFlex ($gap: 8px, $alignItems: center, $justifiContent: center, $flexDirection: column );
+            &__link {
+                color: rgba(255, 255, 255, 0.60);
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px; /* 171.429% */
+                letter-spacing: 0.42px;
+                transition: all 200ms;
+                &:hover{
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .logo--white {
+        color: #fff;
+    }
+    .social-links {
+        @include displayFlex ($gap: 20px, $alignItems: center, $justifiContent: center, $flexDirection: column);
+        &__list {
+            @include displayFlex ($gap: 10px, $alignItems: center, $justifiContent: center, $flexDirection: row);
+        }
+        &__item {
+            @include displayFlex ($gap: 0, $alignItems: center, $justifiContent: center, $flexDirection: row);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        &__link {
+            width: 100%;
+            padding: 12px;
+            @include displayFlex ($gap: 0, $alignItems: center, $justifiContent: center, $flexDirection: row);
+            transition: all 200ms;
+            background-color: rgba(255, 255, 255, 0.10);
+            fill: #FFFFFF;
+            &:hover{
+                background-color: #2196F3;
+            }
+        }
+    }
+    .form {
+        @include displayFlex ($gap: 20px, $alignItems: center, $justifiContent: center, $flexDirection: column);
+        width: 100%;
+        &__item-box-wrapper {
+            @include displayFlex ($gap: 20px, $alignItems: center, $justifiContent: center, $flexDirection: column);
+            width: 100%;
+        }
+        &__item-box {
+            width: 100%;
+        }
+        &__input {
+            width: 100%;
+            padding: 15px 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.30);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+            background-color: #2f303a00;
+            color: rgba(255, 255, 255, 0.60);
+            &::placeholder{
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0.48px;
+            }
+            transition: all 200ms;
+            &:focus{
+                border: 1px solid #2195f398;
+                outline: none;
+                color: #FFF;
+            }
+        }
+        &__btn {
+            color: #FFF;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 30px;
+            letter-spacing: 0.96px;
+            padding: 10px 28px 10px 28px;
+            @include displayFlex ($gap: 12px, $alignItems: center, $justifiContent: center, $flexDirection: row);
+            border-radius: 4px;
+            background-color: #2196F3;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+            fill: #FFF;
+        }
+    }
+}
+@media (min-width:768px){
+    .footer{
+        .footer__inner{
+            .form{
+                width: 450px;
+            }
+            .footer__first-box{
+                gap: 165px;
+            }
+        }
+    }
+
+}
+@media (min-width:1200px){
+    .footer{
+        .footer__inner{
+            .footer__first-box{
+                gap: 60px;
+            }
+            .form{
+                align-items: flex-start;
+                width: 570px;
+                &__item-box-wrapper{
+                    flex-direction: row;
+                    gap: 12px;
+                }
+            }
+            .social-links{
+                align-items: flex-start;
+            }
+            .footer__info-box{
+                align-items: flex-start;
+                .contact{
+                    align-items: flex-start;
+                }
+            }
+        }
+    }
+}
